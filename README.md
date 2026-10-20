@@ -30,10 +30,10 @@ Each stage is shown for 8 seconds. In every stage, the correct result is that th
 | A4 | circle, transparent corners | edge | 0 / 1 (back drawn first) | correct |
 | B1 | white, `SetOverlayAlpha(0.5)` | centered | 0 / 0 | correct |
 | B2 | white, `SetOverlayAlpha(0.5)` | centered | 0 / 1 (back drawn first) | correct |
-| B3 | white, `SetOverlayAlpha(0.5)` | centered | 1 / 0 (front drawn first) | correct |
+| B3 | white, `SetOverlayAlpha(0.5)` | centered | 1 / 0 (front drawn first) | game visible through the white square |
 | C1 | white, texel alpha 0.5 | centered | 0 / 0 | correct |
 | C2 | white, texel alpha 0.5 | centered | 0 / 1 (back drawn first) | correct |
-| C3 | white, texel alpha 0.5 | centered | 1 / 0 (front drawn first) | correct |
+| C3 | white, texel alpha 0.5 | centered | 1 / 0 (front drawn first) | game visible through the white square |
 | D1 | white, `SetOverlayAlpha(0.5)` | edge | 0 / 0 | game visible through the white square |
 | D2 | white, `SetOverlayAlpha(0.5)` | edge | 0 / 1 (back drawn first) | not yet reported |
 | D3 | white, `SetOverlayAlpha(0.5)` | edge | 1 / 0 (front drawn first) | not yet reported |
