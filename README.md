@@ -28,17 +28,17 @@ Each stage is shown for 8 seconds. In every stage, the correct result is that th
 | A2 | circle, transparent corners | centered | 1 / 0 (front drawn first) | game visible in the corners |
 | A3 | circle, transparent corners | edge | 0 / 0 | game visible in the corners |
 | A4 | circle, transparent corners | edge | 0 / 1 (back drawn first) | correct |
-| B1 | white, `SetOverlayAlpha(0.5)` | centered | 0 / 0 | not yet tested |
-| B2 | white, `SetOverlayAlpha(0.5)` | centered | 0 / 1 (back drawn first) | not yet tested |
-| B3 | white, `SetOverlayAlpha(0.5)` | centered | 1 / 0 (front drawn first) | not yet tested |
-| C1 | white, texel alpha 0.5 | centered | 0 / 0 | not yet tested |
-| C2 | white, texel alpha 0.5 | centered | 0 / 1 (back drawn first) | not yet tested |
-| C3 | white, texel alpha 0.5 | centered | 1 / 0 (front drawn first) | not yet tested |
-| D1 | white, `SetOverlayAlpha(0.5)` | edge | 0 / 0 | not yet tested |
-| D2 | white, `SetOverlayAlpha(0.5)` | edge | 0 / 1 (back drawn first) | not yet tested |
-| D3 | white, `SetOverlayAlpha(0.5)` | edge | 1 / 0 (front drawn first) | not yet tested |
+| B1 | white, `SetOverlayAlpha(0.5)` | centered | 0 / 0 | correct |
+| B2 | white, `SetOverlayAlpha(0.5)` | centered | 0 / 1 (back drawn first) | correct |
+| B3 | white, `SetOverlayAlpha(0.5)` | centered | 1 / 0 (front drawn first) | correct |
+| C1 | white, texel alpha 0.5 | centered | 0 / 0 | correct |
+| C2 | white, texel alpha 0.5 | centered | 0 / 1 (back drawn first) | correct |
+| C3 | white, texel alpha 0.5 | centered | 1 / 0 (front drawn first) | correct |
+| D1 | white, `SetOverlayAlpha(0.5)` | edge | 0 / 0 | game visible through the white square |
+| D2 | white, `SetOverlayAlpha(0.5)` | edge | 0 / 1 (back drawn first) | not yet reported |
+| D3 | white, `SetOverlayAlpha(0.5)` | edge | 1 / 0 (front drawn first) | not yet reported |
 
-The results of A1 to A4 were observed with an earlier version of this test (same layout and sort orders) in the original application.
+The results of A1 to A4 were observed with an earlier version of this test (same layout and sort orders) in the original application. The results of B1 to D3 were observed with this program.
 
 In A2, if overlays were simply blended in sort order, the blue overlay (drawn last) would cover the circle. Instead, the circle stays visible and its transparent corners cut holes in the blue overlay.
 
