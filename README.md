@@ -42,10 +42,11 @@ In A2, if overlays were simply blended in sort order, the blue overlay (drawn la
 
 ## Environment where it was observed
 
-- SteamVR: [version]
-- Meta Quest 2 via Virtual Desktop [version]
-- NVIDIA GeForce RTX 3070, driver [version]
+- SteamVR 2.17.10
+- Meta Quest 2 via Virtual Desktop 1.34.22
+- NVIDIA GeForce RTX 3070, driver 610.88
 - Windows 11 Home (build 26200)
+- Game: VRChat
 
 ## Build
 
