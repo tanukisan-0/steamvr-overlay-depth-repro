@@ -177,8 +177,9 @@ int main() {
   }
 
   // The front overlay is always 3 cm closer than the back overlay.
-  // "edge": in front of the right edge of a large back overlay. The distance from the HMD to the front overlay's
-  // center (about 1.07 m) is larger than to the back overlay's center (1.00 m).
+  // "edge": in front of the right edge of a large back overlay. The front overlay is nearer, but both its center
+  // (about 1.07 m) and its nearest point (about 1.015 m) are farther from the HMD than those of the back overlay
+  // (1.00 m).
   const auto back = [](float width, uint32_t order) { return Plane{0, 0, -1.0f, width, order, 1.0f}; };
   const auto center = [](uint32_t order, float alpha) { return Plane{0, 0, -0.97f, 0.3f, order, alpha}; };
   const auto edge = [](uint32_t order, float alpha) { return Plane{0.45f, 0, -0.97f, 0.3f, order, alpha}; };

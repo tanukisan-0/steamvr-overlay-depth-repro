@@ -2,7 +2,9 @@
 
 A minimal program that reproduces a SteamVR compositor problem. When two overlays overlap and the nearer overlay is drawn first, its transparent and translucent texels hide the farther overlay, and the game shows through.
 
-It looks as if the compositor writes depth for every texel of an overlay quad, including fully transparent ones. This is easy to trigger with overlays that have the same sort order, because they seem to be ordered by the distance to their centers: a small overlay in front of the edge of a large overlay counts as farther away and is drawn first.
+It looks as if the compositor writes depth for every texel of an overlay quad, including fully transparent ones.
+
+This is easy to trigger with overlays that have the same sort order. They are documented to be rendered back to front based on distance from the HMD, but in the "edge" layout below, the nearer overlay was drawn first. Measuring the distance to each overlay's center would explain this, and so would measuring it to the nearest point of each overlay. We have not verified how SteamVR measures the distance.
 
 The program uses only OpenVR and Direct3D 11 (one source file, `main.cpp`).
 
@@ -16,7 +18,7 @@ Two overlays are attached to the HMD, facing the user:
 All overlays are flat and use premultiplied `R8G8B8A8_UNORM` textures with `VROverlayFlags_IsPremultiplied`. Positions are in meters relative to the HMD (-z is forward):
 
 - **centered**: back at (0, 0, -1.00), width 0.5; front at (0, 0, -0.97), width 0.3.
-- **edge**: back at (0, 0, -1.00), width 1.2; front at (0.45, 0, -0.97), width 0.3. The front overlay's center is about 1.07 m from the HMD, the back overlay's center 1.00 m.
+- **edge**: back at (0, 0, -1.00), width 1.2; front at (0.45, 0, -0.97), width 0.3. The front overlay is 3 cm nearer, but its center is farther from the HMD (about 1.07 m) than the back overlay's center (1.00 m). Its nearest point (about 1.015 m) is also farther than the back overlay's nearest point (1.00 m).
 
 Each stage is shown for 8 seconds. In every stage, the correct result is that the blue overlay is visible behind the white overlay.
 
