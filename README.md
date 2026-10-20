@@ -35,8 +35,8 @@ Each stage is shown for 8 seconds. In every stage, the correct result is that th
 | C2 | white, texel alpha 0.5 | centered | 0 / 1 (back drawn first) | correct |
 | C3 | white, texel alpha 0.5 | centered | 1 / 0 (front drawn first) | game visible through the white square |
 | D1 | white, `SetOverlayAlpha(0.5)` | edge | 0 / 0 | game visible through the white square |
-| D2 | white, `SetOverlayAlpha(0.5)` | edge | 0 / 1 (back drawn first) | not yet reported |
-| D3 | white, `SetOverlayAlpha(0.5)` | edge | 1 / 0 (front drawn first) | not yet reported |
+| D2 | white, `SetOverlayAlpha(0.5)` | edge | 0 / 1 (back drawn first) | correct |
+| D3 | white, `SetOverlayAlpha(0.5)` | edge | 1 / 0 (front drawn first) | game visible through the white square |
 
 The results of A1 to A4 were observed with an earlier version of this test (same layout and sort orders) in the original application. The results of B1 to D3 were observed with this program.
 
